@@ -1,0 +1,297 @@
+{
+	"@context" : {
+		"ex" : "http://example.org/",
+		"ex:Supermarket" : {
+			"@id" : "ex:Supermarket",
+			"@type" : "rdfs:Resource"
+		},
+		"ex:Food" : {
+			"@id" : "ex:Food",
+			"@type" : "rdfs:Class",
+			"rdfs:subClassOf" : "ex:Supermarket"
+		},
+		"ex:Groceries" : {
+			"@id" : "ex:Groceries",
+			"@type" : "rdfs:Class",
+			"rdfs:subClassOf" : "ex:Food"
+		},
+		"ex:Meat" : {
+			"@id" : "ex:Meat",
+			"@type" : "rdfs:Class",
+			"rdfs:subClassOf" : "ex:Food"
+		},
+		"ex:JunkFood" : {
+			"@id" : "ex:JunkFood",
+			"@type" : "rdfs:Class",
+			"rdfs:subClassOf" : "ex:Food"
+		},
+		"ex:Dairy" : {
+			"@id" : "ex:Dairy",
+			"@type" : "rdfs:Class",
+			"rdfs:subClassOf" : "ex:Food"
+		},
+		"ex:Non-food" : {
+			"@id" : "ex:Non-food",
+			"@type" : "rdfs:Class",
+			"rdfs:subClassOf" : "ex:Supermarket"
+		},
+		"ex:Hygiene" : {
+			"@id" : "ex:Hygiene",
+			"@type" : "rdfs:Class",
+			"rdfs:subClassOf" : "ex:Non-food"
+		},
+		"ex:Cosmetics" : {
+			"@id" : "ex:Cosmetics",
+			"@type" : "rdfs:Class",
+			"rdfs:subClassOf" : "ex:Non-food"
+		},
+		"ex:Detergents" : {
+			"@id" : "ex:Detergents",
+			"@type" : "rdfs:Class",
+			"rdfs:subClassOf" : "ex:Non-food"
+		},
+		"ex:Tableware" : {
+			"@id" : "ex:Tableware",
+			"@type" : "rdfs:Class",
+			"rdfs:subClassOf" : "ex:Non-food"
+		},
+		"ex:IsFruit" : {
+			"@id": "ex:IsFruit",
+			"@type": "rdf:Property",
+			"rdfs:domain": "ex:Groceries",
+			"rdfs:range": "xsd:boolean"
+		},
+		"ex:IsRaw" : {
+			"@id": "ex:IsRaw",
+			"@type": "rdf:Property",
+			"rdfs:domain": "ex:Meat",
+			"rdfs:range": "xsd:boolean"
+		},
+		"ex:IsSweet" : {
+			"@id": "ex:IsSweet",
+			"@type": "rdf:Property",
+			"rdfs:domain": "ex:JunkFood",
+			"rdfs:range": "xsd:boolean"
+		},
+		"ex:CattleOrigin" : {
+			"@id": "ex:CattleOrigin",
+			"@type": "rdf:Property",
+			"rdfs:domain": "ex:Dairy",
+			"rdfs:range": "xsd:string"
+		},
+		"ex:IsLiquid" : {
+			"@id": "ex:IsLiquid",
+			"@type": "rdf:Property",
+			"rdfs:domain": "ex:Supermarket",
+			"rdfs:range": "xsd:boolean"
+		},
+		"ex:Price" : {
+			"@id": "ex:Price",
+			"@type": "rdf:Property",
+			"rdfs:domain": "ex:Supermarket",
+			"rdfs:range": "xsd:double"
+		},
+		"ex:CountryOrigin" : {
+			"@id": "ex:CountryOrigin",
+			"@type": "rdf:Property",
+			"rdfs:domain": "ex:Supermarket",
+			"rdfs:range": "xsd:string"
+		},
+		"ex:ExpirationDate" : {
+			"@id": "ex:ExpirationDate",
+			"@type": "rdf:Property",
+			"rdfs:domain": "ex:Supermarket",
+			"rdfs:range": "xsd:date"
+		},
+		"ex:Amount" : {
+			"@id": "ex:Amount",
+			"@type": "rdf:Property",
+			"rdfs:domain": "ex:Supermarket",
+			"rdfs:range": "xsd:integer"
+		},
+		"ex:ItemsCount" : {
+			"@id": "ex:ItemsCount",
+			"@type": "rdf:Property",
+			"rdfs:domain": "ex:Hygiene",
+			"rdfs:range": "xsd:integer"
+		},
+		"ex:BodyPartUsage" : {
+			"@id": "ex:BodyPartUsage",
+			"@type": "rdf:Property",
+			"rdfs:domain": "ex:Cosmetics",
+			"rdfs:range": "xsd:string"
+		},
+		"ex:CleaningUsage" : {
+			"@id": "ex:CleaningUsage",
+			"@type": "rdf:Property",
+			"rdfs:domain": "ex:Detergents",
+			"rdfs:range": "xsd:string"
+		},
+		"ex:IsDish" : {
+			"@id": "ex:IsDish",
+			"@type": "rdf:Property",
+			"rdfs:domain": "ex:Tableware",
+			"rdfs:range": "xsd:boolean"
+		}
+	},
+	"ex:Tomato" : {
+		"@id": "ex:Tomato",
+		"@type" : "ex:Groceries",
+		"ex:Price" : "2.00",
+		"ex:Amount" : "1",
+		"ex:CountryOrigin" : "Greece",
+		"ex:ExpirationDate" : "01.01.2020",
+		"ex:IsLiquid" : "false",
+		"ex:IsFruit" : "false"
+	},
+	"ex:Watermelon" : {
+		"@id": "ex:Watermelon",
+		"@type" : "ex:Groceries",
+		"ex:Price" : "0.75",
+		"ex:Amount" : "1",
+		"ex:CountryOrigin" : "Bulgaria",
+		"ex:ExpirationDate" : "01.01.2020",
+		"ex:IsLiquid" : "false",
+		"ex:IsFruit" : "true"
+	},
+	"ex:Salami" : {
+		"@id": "ex:Salami",
+		"@type" : "ex:Meat",
+		"ex:Price" : "7.69",
+		"ex:Amount" : "0.40",
+		"ex:CountryOrigin" : "Bulgaria",
+		"ex:ExpirationDate" : "31.12.2020",
+		"ex:IsLiquid" : "false",
+		"ex:IsRaw" : "false"
+	},
+	"ex:Beef" : {
+		"@id": "ex:Beef",
+		"@type" : "ex:Meat",
+		"ex:Price" : "11.34",
+		"ex:Amount" : "1",
+		"ex:CountryOrigin" : "Bulgaria",
+		"ex:ExpirationDate" : "31.12.2020",
+		"ex:IsLiquid" : "false",
+		"ex:IsRaw" : "true"
+	},
+	"ex:Cookies" : {
+		"@id": "ex:Cookies",
+		"@type" : "ex:JunkFood",
+		"ex:Price" : "1.79",
+		"ex:Amount" : "0.20",
+		"ex:CountryOrigin" : "Germany",
+		"ex:ExpirationDate" : "01.07.2020",
+		"ex:IsLiquid" : "false",
+		"ex:IsSweet" : "true"
+	}, 
+	"ex:Hazelnuts" : {
+		"@id": "ex:Hazelnuts",
+		"@type" : "ex:JunkFood",
+		"ex:Price" : "7.62",
+		"ex:Amount" : "0.30",
+		"ex:CountryOrigin" : "Bulgaria",
+		"ex:ExpirationDate" : "31.12.2020",
+		"ex:IsLiquid" : "false",
+		"ex:IsSweet" : "false"
+	},
+	"ex:Milk" : {
+		"@id": "ex:Milk",
+		"@type" : "ex:Dairy",
+		"ex:Price" : "2.05",
+		"ex:Amount" : "1",
+		"ex:CountryOrigin" : "Bulgaria",
+		"ex:ExpirationDate" : "07.01.2020",
+		"ex:IsLiquid" : "true",
+		"ex:CattleOrigin" : "Cow"
+	},
+	"ex:Cheese" : {
+		"@id": "ex:Cheese",
+		"@type" : "ex:Dairy",
+		"ex:Price" : "5.36",
+		"ex:Amount" : "0.40",
+		"ex:CountryOrigin" : "Bulgaria",
+		"ex:ExpirationDate" : "07.01.2020",
+		"ex:IsLiquid" : "false",
+		"ex:CattleOrigin" : "Goat"
+	},
+	"ex:Cif" : {
+		"@id": "ex:Cif",
+		"@type" : "ex:Detergents",
+		"ex:Price" : "2.45",
+		"ex:Amount" : "0.20",
+		"ex:CountryOrigin" : "USA",
+		"ex:ExpirationDate" : "31.12.2020",
+		"ex:IsLiquid" : "true",
+		"ex:CleaningUsage" : "Limescale"
+	},
+	"ex:Fairy" : {
+		"@id": "ex:Fairy",
+		"@type" : "ex:Detergents",
+		"ex:Price" : "2.10",
+		"ex:Amount" : "0.20",
+		"ex:CountryOrigin" : "France",
+		"ex:ExpirationDate" : "31.12.2020",
+		"ex:IsLiquid" : "true",
+		"ex:CleaningUsage" : "Dishes"
+	},
+	"ex:MicellarWater" : {
+		"@id": "ex:MicellarWater",
+		"@type" : "ex:Cosmetics",
+		"ex:Price" : "9.76",
+		"ex:Amount" : "0.30",
+		"ex:CountryOrigin" : "England",
+		"ex:ExpirationDate" : "01.07.2020",
+		"ex:IsLiquid" : "true",
+		"ex:BodyPartUsage" : "Face"
+	},
+	"ex:HandCream" : {
+		"@id": "ex:HandCream",
+		"@type" : "ex:Cosmetics",
+		"ex:Price" : "1.23",
+		"ex:Amount" : "0.10",
+		"ex:CountryOrigin" : "Hungary",
+		"ex:ExpirationDate" : "01.07.2020",
+		"ex:IsLiquid" : "true",
+		"ex:BodyPartUsage" : "Hands"
+	},
+	"ex:ToiletPaper" : {
+		"@id": "ex:ToiletPaper",
+		"@type" : "ex:Hygiene",
+		"ex:Price" : "4.10",
+		"ex:Amount" : "1",
+		"ex:CountryOrigin" : "Austria",
+		"ex:ExpirationDate" : "31.12.2020",
+		"ex:IsLiquid" : "false",
+		"ex:ItemsCount" : "12"
+	},
+	"ex:WetWipes" : {
+		"@id": "ex:WetWipes",
+		"@type" : "ex:Hygiene",
+		"ex:Price" : "0.65",
+		"ex:Amount" : "1",
+		"ex:CountryOrigin" : "Romania",
+		"ex:ExpirationDate" : "31.12.2020",
+		"ex:IsLiquid" : "false",
+		"ex:ItemsCount" : "15"
+	},
+	"ex:Fork" : {
+		"@id": "ex:Fork",
+		"@type" : "ex:Tableware",
+		"ex:Price" : "1.09",
+		"ex:Amount" : "1",
+		"ex:CountryOrigin" : "Holland",
+		"ex:ExpirationDate" : "31.12.2020",
+		"ex:IsLiquid" : "false",
+		"ex:IsDish" : "false"
+	},
+	"ex:Bowl" : {
+		"@id": "ex:Bowl",
+		"@type" : "ex:Tableware",
+		"ex:Price" : "4.60",
+		"ex:Amount" : "1",
+		"ex:CountryOrigin" : "Italy",
+		"ex:ExpirationDate" : "31.12.2020",
+		"ex:IsLiquid" : "false",
+		"ex:IsDish" : "true"
+	}
+}
