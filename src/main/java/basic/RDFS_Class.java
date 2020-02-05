@@ -114,9 +114,4 @@ public class RDFS_Class extends RDF_Resource {
         }
         return this;
     }
-
-    //    && !hasProperty(property, resource)
-//    public boolean hasProperty(RDF_Property property, RDF_Resource resource) {
-//        return getModel().contains(this, property, resource);
-//    }
 }
