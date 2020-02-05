@@ -76,9 +76,17 @@ public class Main {
         for (RDFS_Class item : itemsList.values()) {
             for (RDF_Statement statement : model.listStatements(item)) {
                 System.out.println(statement.getCompactFormat());
-//                for (RDF_Statement st : statement.getModel().listStatements(statement)) {
-////                    System.out.println(st.getCompactFormat());
-////                }
+                for (RDF_Statement st : statement.getModel().listStatements(statement)) {
+                    System.out.println(st.getCompactFormat());
+                }
+            }
+        }
+        for (RDF_Property property : propertyList.values()) {
+            for (RDF_Statement statement : model.listStatements(property)) {
+                System.out.println(statement.getCompactFormat());
+                for (RDF_Statement st : statement.getModel().listStatements(statement)) {
+                    System.out.println(st.getCompactFormat());
+                }
             }
         }
     }
